@@ -9,6 +9,7 @@ export interface Seminar {
   time: string;
   url: string;
   description: ReactNode;
+  hasVOD?: boolean;
 }
 
 export const seminars: Seminar[] = [
@@ -34,6 +35,7 @@ export const seminars: Seminar[] = [
         </span>
       </>
     ),
+    hasVOD: false,
   },
   {
     id: "withNothing",
@@ -56,6 +58,7 @@ export const seminars: Seminar[] = [
         </span>
       </>
     ),
+    hasVOD: false,
   },
   {
     id: "seminar3",
@@ -71,6 +74,7 @@ export const seminars: Seminar[] = [
     date: "2025-07-16",
     time: "20:00",
     url: "https://tally.so/r/wdGrdK",
-    description: <>선착순 마감!</>,
+    description: <>정원 30명</>,
+    hasVOD: true,
   },
 ];

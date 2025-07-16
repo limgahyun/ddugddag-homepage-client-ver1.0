@@ -10,6 +10,7 @@ interface SeminarCardProps {
   isClosed?: boolean;
   url: string;
   description: React.ReactNode;
+  hasVOD?: boolean;
 }
 
 const SeminarCard: React.FC<SeminarCardProps> = ({
@@ -21,6 +22,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
   isClosed = false,
   url,
   description,
+  hasVOD = false,
 }) => {
   const cardContent = (
     <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100 ">
@@ -65,11 +67,11 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
                 : "bg-[#FF6B6B] text-white"
             }`}
           >
-            {dDay}
+            {hasVOD ? "VOD" : dDay}
           </div>
           {/* DateTime */}
           <div className="text-sm sm:text-2xl md:text-base xl:text-lg text-white/80 font-semibold">
-            {dateTime}
+            {hasVOD ? "VOD & 질의응답권 제공" : dateTime}
           </div>
           {/* Notice */}
           <div className="text-sm sm:text-3xl md:text-lg xl:text-2xl font-bold text-red-600">

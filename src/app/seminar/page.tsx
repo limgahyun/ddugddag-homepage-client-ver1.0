@@ -54,6 +54,7 @@ export default function SeminarPage() {
                     isClosed={isClosed}
                     url={seminar.url}
                     description={seminar.description}
+                    hasVOD={seminar.hasVOD}
                   />
                 );
               })}
