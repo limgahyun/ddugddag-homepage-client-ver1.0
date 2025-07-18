@@ -36,10 +36,17 @@ export default function SeminarPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...seminars]
               .sort((a, b) => {
-                const aClosed = getDDay(a.date).isClosed;
-                const bClosed = getDDay(b.date).isClosed;
-                if (aClosed === bClosed) return 0;
-                return aClosed ? 1 : -1; // isClosed가 true면 뒤로
+                const aStatus = getDDay(a.date).isClosed
+                  ? a.hasVOD
+                    ? 1
+                    : 2
+                  : 0;
+                const bStatus = getDDay(b.date).isClosed
+                  ? b.hasVOD
+                    ? 1
+                    : 2
+                  : 0;
+                return aStatus - bStatus;
               })
               .map((seminar: Seminar) => {
                 const { dDay, isClosed } = getDDay(seminar.date);
