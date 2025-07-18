@@ -75,6 +75,6 @@ export const seminars: Seminar[] = [
     time: "20:00",
     url: "https://tally.so/r/wdGrdK",
     description: <>정원 30명</>,
-    hasVOD: true,
+    hasVOD: false,
   },
 ];
