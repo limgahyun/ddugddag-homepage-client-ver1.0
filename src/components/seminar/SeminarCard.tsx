@@ -32,13 +32,13 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
         alt={typeof title === "string" ? title : "세미나 썸네일"}
         fill
         className={`object-cover w-full h-full transition-all duration-300 ${
-          isClosed ? "opacity-60 grayscale" : ""
+          isClosed && !hasVOD ? "opacity-60 grayscale" : ""
         }`}
         style={{ zIndex: 1 }}
         priority
       />
       {/* Gray overlay for 종료 */}
-      {isClosed && (
+      {isClosed && !hasVOD && (
         <div className="absolute inset-0 bg-gray-700/70 z-10 flex flex-col items-center justify-center">
           <span className="text-5xl font-bold text-white mb-8">종료</span>
         </div>
@@ -82,7 +82,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
     </div>
   );
 
-  if (!isClosed) {
+  if (!isClosed || hasVOD) {
     return (
       <a
         href={url}
