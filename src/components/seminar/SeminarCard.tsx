@@ -74,7 +74,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
             {hasVOD ? "VOD & 질의응답권 제공" : dateTime}
           </div>
           {/* Notice */}
-          <div className="text-sm sm:text-3xl md:text-lg xl:text-2xl font-bold text-red-600">
+          <div className="text-sm sm:text-3xl md:text-lg xl:text-2xl font-bold text-red-600 text-center">
             {description}
           </div>
         </div>

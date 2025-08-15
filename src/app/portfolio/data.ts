@@ -369,12 +369,9 @@ export const categories: Category[] = [
           "notello",
           "gymnetic",
           "spotly",
-          "nutrilog",
-          "coinsight",
           "humance",
           "cyclink",
           "defina",
-          "plantelligence",
           "rumor",
           "mooplanner",
           "trackly",
@@ -405,14 +402,7 @@ export const categories: Category[] = [
     color: "green",
     projects: [
       ...PROJECTS.filter((p) =>
-        [
-          "perfumory",
-          "nutrilog",
-          "coinsight",
-          "defina",
-          "gymnetic",
-          "spotly",
-        ].includes(p.id)
+        ["perfumory", "defina", "gymnetic", "spotly"].includes(p.id)
       ),
     ],
   },
@@ -439,14 +429,7 @@ export const categories: Category[] = [
     color: "red",
     projects: [
       ...PROJECTS.filter((p) =>
-        [
-          "trackly",
-          "gymnetic",
-          "mooplanner",
-          "plantelligence",
-          "spotly",
-          "nutrilog",
-        ].includes(p.id)
+        ["trackly", "gymnetic", "mooplanner", "spotly"].includes(p.id)
       ),
     ],
   },

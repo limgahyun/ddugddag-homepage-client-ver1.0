@@ -77,4 +77,28 @@ export const seminars: Seminar[] = [
     description: <>정원 30명</>,
     hasVOD: false,
   },
+  {
+    id: "offTheRecord2",
+    organization: "BAYA",
+    title: (
+      <>
+        <span className="font-extrabold">[오프더레코드2]</span> 주관기관이 절대
+        <br /> 알려주지 않는{" "}
+        <span className="font-extrabold">지원사업 실전</span>
+      </>
+    ),
+    thumbnail: "/seminar/offTheRecord.png",
+    date: "2025-07-31",
+    time: "21:30",
+    url: "https://tally.so/r/wz5eZZ",
+    description: (
+      <>
+        신청자 전원 가이드백서 제공{" "}
+        <span className="text-white/80 font-semibold text-sm sm:text-2xl md:text-lg xl:text-xl">
+          무료 라이브
+        </span>
+      </>
+    ),
+    hasVOD: false,
+  },
 ];
