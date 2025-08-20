@@ -2,6 +2,7 @@
 
 import { ArrowDownIcon } from "@/components/icons";
 import { useRouter } from "next/navigation";
+import DownloadButton from "@/components/shared/DownloadButton";
 
 export default function Hero() {
   const router = useRouter();
@@ -49,32 +50,16 @@ export default function Hero() {
 
             {/* Download Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md justify-center items-center">
-              <button
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "/file/portfolio.pdf"; // 포트폴리오 파일 경로
-                  link.download = "바야_포트폴리오.pdf";
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-                className="flex w-auto bg-transparent border-2 border-white hover:bg-white hover:text-blue-1000 text-white text-center px-6 py-2 rounded-lg font-pretendard font-medium transition-all duration-300 text-base break-keep"
-              >
-                포트폴리오 다운로드
-              </button>
-              <button
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "/file/profile.pdf"; // 회사소개서 파일 경로
-                  link.download = "바야_회사소개서.pdf";
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-                className="flex w-auto bg-transparent border-2 border-white hover:bg-white hover:text-blue-1000 text-white text-center px-6 py-2 rounded-lg font-pretendard font-medium transition-all duration-300 text-base break-keep"
-              >
-                회사소개서 다운로드
-              </button>
+              <DownloadButton
+                filePath="/file/portfolio.pdf"
+                fileName="바야_포트폴리오.pdf"
+                buttonText="포트폴리오 다운로드"
+              />
+              <DownloadButton
+                filePath="/file/profile.pdf"
+                fileName="바야_회사소개서.pdf"
+                buttonText="회사소개서 다운로드"
+              />
             </div>
           </div>
         </div>
